@@ -11,9 +11,7 @@ MODEL = register.Registry('models')
 class net():
     pass
 
-@MODEL.register_module()
-class net2():
-    pass
+
 
 
 # Press the green button in the gutter to run the script.
