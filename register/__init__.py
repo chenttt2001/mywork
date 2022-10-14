@@ -1,1 +1,1 @@
-# from .register import Registry
+from .register import Registry, build_from_cfg
