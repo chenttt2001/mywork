@@ -1,4 +1,5 @@
 import logger
+import torch.multiprocessing as mp
 from tqdm import tqdm,trange
 from train import myfunc
 import torch
