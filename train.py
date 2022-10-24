@@ -1,8 +1,6 @@
 from torch.nn.parallel import DistributedDataParallel as DDP
 import torch
 import torch.distributed as dist
-import torch.multiprocessing as mp
-import torch.nn.functional as F
 import torch.nn as nn
 import torchvision
 from torch.nn.parallel import DistributedDataParallel as DDP
