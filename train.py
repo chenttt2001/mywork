@@ -23,12 +23,11 @@ def get_dataset():
     return trainloader
 
 
-def myfunc(rank, world_size):
+def myfunc(rank, world_size,epochs):
     torch.cuda.set_device(rank)
 
     # DDP：DDP backend初始化
-    dist.init_process_group(backend='nccl', init_method='tcp://127.0.0.1:23456',
-                         world_size = world_size,rank=rank)
+    dist.init_process_group(backend='nccl', init_method='tcp://127.0.0.1:8888',world_size=world_size, rank=rank)
 
     # 准备数据，要在DDP初始化之后进行
     trainloader = get_dataset()
@@ -47,7 +46,7 @@ def myfunc(rank, world_size):
 
     ### 3. 网络训练  ###
     model.train()
-    iterator = tqdm(range(100))
+    iterator = tqdm(range(epochs))
     for epoch in iterator:
         # DDP：设置sampler的epoch，
         # DistributedSampler需要这个来指定shuffle方式，

@@ -1,9 +1,11 @@
 import logger
 from tqdm import tqdm,trange
-# Press the green button in the gutter to run the script.
+from train import myfunc
+import torch
 if __name__ == '__main__':
-    for i in trange(100):
-        print(1)
+    num_GPU = torch.cuda.device_count()
+    print('num_GPU : %d' %num_GPU)
+    mp.spawn(fn=myfunc, args=(num_GPU), nprocs=num_GPU)
 
     # writer = logger.get_logger('C:/Users/chen/Desktop/Myworkspace')
     # model = UNet()
