@@ -3,7 +3,7 @@ import warnings
 
 
 MODEL = Registry('models')
-
+HEAD = Registry('heads')
 #<editor-fold desc="example">
 
 def build_segmentor(cfg, train_cfg=None, test_cfg=None):

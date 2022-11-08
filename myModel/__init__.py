@@ -1,4 +1,4 @@
-from .build import build_segmentor, MODEL
+from .build import build_segmentor, MODEL, HEAD
 from .backbone import *
 from .models import UNet
-__all__ = ['MODEL','build_segmentor','UNet']
+__all__ = ['MODEL', 'HEAD', 'build_segmentor', 'UNet']
